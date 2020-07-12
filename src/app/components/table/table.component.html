@@ -1,0 +1,11 @@
+<div class="table-commer">
+    <table class="table">
+        <tr>
+            <th>NAME</th>
+        </tr>
+        <tr (click)="getValue($event)" *ngFor="let commer of commerces" class="item-table">
+            <td>{{ commer.name }}</td>
+        </tr>
+    </table>
+    
+</div>
