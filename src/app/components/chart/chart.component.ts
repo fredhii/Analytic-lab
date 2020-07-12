@@ -60,7 +60,6 @@ export class ChartComponent implements OnInit {
       this.names.push(value.name);
       this.sales.push(Number(value.sales));
     }
-    console.log(this.names);
   }
 
 

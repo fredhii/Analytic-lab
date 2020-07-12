@@ -1,177 +1,92 @@
-* {
-    margin: 0;
-    padding: 0;
+/* =============================== */
+/* COMMON STYLE */
+/* =============================== */
+html {
+    height: 100%;
 }
+body {
+    height: inherit;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =============================== */
+/* General table commer */
+/* =============================== */
+.table-commer-one {
+    background: #668488;
+    border-radius: 5px;
+    color: #eee;
+    box-shadow: 0px 0px 10px 4px #ccc;
+}
+.nit {
+    color: rgb(241, 241, 241, 0.7);
+}
+
+
+.table-commer-two {
+    background: #b9f1f8;
+    border-radius: 5px;
+    color: rgb(114, 114, 114);
+    box-shadow: 0px 0px 10px 4px #ccc;
+}
+.owner-name {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.table-commer-two p {
+    margin: 0;
+}
+
+
+/* =============================== */
+/* Scroll table commer */
+/* =============================== */
+.scroll-table {
+    border-radius: 5px;
+    overflow-y: auto;
+    max-height: 280px;
+    box-shadow: 0px 0px 10px 4px #ccc;
+}
+.item-table:hover {
+    background: #ccc;
+    cursor: pointer;
+}
+/* Scroll style */
 :root {
     --main-color: #6ccedb;
     --second-color: #cbf4fa;
     --back-color: #eee;
 }
-
-.body-cl {
-    margin-top: 0;
-    background-color: var(--back-color);
-    font-family: 'Poppins', sans-serif;
-}
-
-/* General changes to scrollbar*/
-/* width */
- ::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 10px; 
-} 
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: var(--light);
-    border-radius: 5px;
 }
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: var(--main-color);
-    border-radius: 5px;
-}
-  
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: var(--second-color);
-}
-
-/*Fix float*/
-.clear-fix {
-    clear: both;
-}
-
-/*Table customize*/
-.table {
-    width: 100% !important;
-}
-.table-commer {
-    margin-top: 40px;
-    box-shadow: 5px 10px 10px #ccc;
-    margin-left: 100px;
-    border-radius: 5px;
-    background: white;
-    height: 280px;
-    width: 300px;
-    overflow-y: auto;
-}
-
-.item-table:hover {
-    background: #ccc;
-    cursor: pointer;
 }
 
 
-/* Target - commerce component*/
-
-.target-commer {
-    box-shadow: none;
-    color: #eee;
-    background: var(--back-color);
-    width: 310px;
-}
-
-.target-commer h3{
-    display: block;
-    margin-left: 15px;
-    margin-bottom: auto;
-    padding-top: 10px;
-    padding-bottom: auto;
-}
-.target-commer p{
-    margin-left: 15px;
-    margin: auto;
-}
-
-.first-table {
-    border-radius: 5px;
-    width: 300px;
-    height: 30%;
-    background: #668488;
-    box-shadow: 5px 10px 10px #ccc;
-    margin-right: 5px;
-}
-
-.second-table {
-    color: rgb(114, 114, 114);
-    box-shadow: none;
-    margin-top: 10px;
-    border-radius: 5px;
-    width: 300px;
-    height: 60%;
-    background: #b9f1f8;
-    box-shadow: 5px 10px 10px #ccc;
-}
-
-.second-table p {
-    display: block;
-    margin-top: 3px;
-    margin-left: 15px;
-    margin-right: 10px;
-}
-#nit-table {
-    display: block;
-    padding-top: 0px auto;
-    color: rgb(241, 241, 241, 0.7);
-    margin-left: 15px;
-}
-#owner-table {
-    font-size: 20px;
-    text-transform: uppercase;
-}
-
-#num-table {
-    display: block;
-    float: right;
-    margin-top: 20px;
-    margin-right: 20px;
-}
-
-#adr-table {
-    display: block;
-    float: left;
-    margin-top: 20px;
-}
-
-/* test */
-.container {
-    width: 100%;
-    max-width: 100%;
-}
-
-.tables-targets {
-    float: left;
-    padding: 0;
-    width: 0;
-    width: 500px;
-}
-
+/* =============================== */
+/* Graph */
+/* =============================== */
 .graph-table {
-    margin: auto;
-    width: 80%;
-    height: 263px;
-    margin-top: 40px;
-    margin-left: 0px;
     background: rgb(221, 221, 221);
     border-radius: 4px;
-    box-shadow: 5px 10px 10px #ccc;
 }
 
-.map-table {
+
+/* =============================== */
+/* Map */
+/* =============================== */
+.map {
     margin: auto;
-    width: 80%;
     height: 280px;
-    box-shadow: 5px 10px 10px #ccc;
-    margin-left: 0px;
-    margin-top: 53px;
+    box-shadow: 0px 0px 10px 4px #ccc;
     border-radius: 5px;
 }
 
-.right {
-    width: 60%;
-    height: 100%;
-}
+
 /* chart */
 
 #map-pos {

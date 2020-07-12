@@ -1,15 +1,24 @@
-<div class="container">
-    <div class="tables-targets">
-        <app-target-com [commer]="commer"></app-target-com>
-        <app-table (eventToSend)="getValueCommer($event)"></app-table>    
-    </div>
-    <div class="float-right right">
-        <div class="graph-table">
-            <app-chart></app-chart>
+<!-- 
+    d-flex === display: flex
+    justify-content-center === te centra el contenido horizontalmente
+    justify-content-around === te centra el contenido horizontalmente con un espacio equivalente entre ellos 
+    align-items-center === te centra el contenido verticalmente
+    h-100 === heigth: 100%
+ -->
+<div class="h-100">
+    <div class="row h-100 align-items-center justify-content-center">
+        <div class="col-sm-6 col-md-3">
+            <app-target-com [commer]="commer"></app-target-com>
+            <app-table (eventToSend)="getValueCommer($event)"></app-table>    
         </div>
-        <div class="map-table">
-            <app-map></app-map>
+        <div class="col-sm-6 col-md-6">
+            <div class="graph-table mb-5">
+                <app-chart></app-chart>
+            </div>
+            <div class="map">
+                <app-map></app-map>
+            </div>
         </div>
-
     </div>
 </div>    
+ 

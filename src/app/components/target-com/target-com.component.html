@@ -1,17 +1,16 @@
-<div class="table-commer target-commer">
-    <div class="first-table">
-        <h3>{{ commer.name }}</h3>
-        <p id="nit-table">NIT: {{ commer.nit }}</p>
+<div class="mb-5">
+    <div class="table-commer-one mb-2 pl-4 py-2">
+        <h3 class="mb-0">{{ commer.name }}</h3>
+        <p class="nit mb-0">NIT: {{ commer.nit }}</p>
 
     </div>
     
-    <div class="second-table">
-        <p id="owner-table">{{ commer.owner }}</p>
+    <div class="table-commer-two py-2 px-3">
+        <p class="owner-name">{{ commer.owner }}</p>
         <p>SCHEDULE: {{ commer.schedule }}</p>
         <p>DAYS: {{ commer.days }}</p>
         <p>SALES: {{ commer.sales }}</p>
-        <p id="adr-table">{{ commer.address }}</p>
-        <p id="num-table">{{ commer.phone }}</p>
-        <div class="clear-fix"></div>
+        <p>{{ commer.address }}</p>
+        <p class="text-right">{{ commer.phone }}</p>
     </div>
 </div>
