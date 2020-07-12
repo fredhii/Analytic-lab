@@ -23,11 +23,13 @@
 /* Track */
 ::-webkit-scrollbar-track {
     background: var(--light);
+    border-radius: 5px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: var(--main-color);
+    border-radius: 5px;
 }
   
 /* Handle on hover */
@@ -46,7 +48,7 @@
 }
 .table-commer {
     margin-top: 40px;
-    box-shadow: 5px 10px #ccc;
+    box-shadow: 5px 10px 10px #ccc;
     margin-left: 100px;
     border-radius: 5px;
     background: white;
@@ -67,6 +69,7 @@
     box-shadow: none;
     color: #eee;
     background: var(--back-color);
+    width: 310px;
 }
 
 .target-commer h3{
@@ -83,9 +86,11 @@
 
 .first-table {
     border-radius: 5px;
-    width: 100%;
+    width: 300px;
     height: 30%;
     background: #668488;
+    box-shadow: 5px 10px 10px #ccc;
+    margin-right: 5px;
 }
 
 .second-table {
@@ -93,9 +98,10 @@
     box-shadow: none;
     margin-top: 10px;
     border-radius: 5px;
-    width: 100%;
+    width: 300px;
     height: 60%;
     background: #b9f1f8;
+    box-shadow: 5px 10px 10px #ccc;
 }
 
 .second-table p {
@@ -144,20 +150,22 @@
 .graph-table {
     margin: auto;
     width: 80%;
-    height: 280px;
+    height: 263px;
     margin-top: 40px;
     margin-left: 0px;
     background: rgb(221, 221, 221);
     border-radius: 4px;
+    box-shadow: 5px 10px 10px #ccc;
 }
 
-.map {
+.map-table {
     margin: auto;
     width: 80%;
     height: 280px;
-    border: 1px solid green;
+    box-shadow: 5px 10px 10px #ccc;
     margin-left: 0px;
-    margin-top: 40px;
+    margin-top: 53px;
+    border-radius: 5px;
 }
 
 .right {
@@ -165,3 +173,9 @@
     height: 100%;
 }
 /* chart */
+
+#map-pos {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}

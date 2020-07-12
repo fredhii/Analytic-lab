@@ -8,6 +8,7 @@ import { TargetComComponent } from './components/target-com/target-com.component
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ChartComponent } from './components/chart/chart.component';
 import { ChartsModule } from 'ng2-charts';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ChartsModule } from 'ng2-charts';
     TableComponent,
     TargetComComponent,
     SidebarComponent,
-    ChartComponent
+    ChartComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
