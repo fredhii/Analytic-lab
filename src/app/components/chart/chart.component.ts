@@ -11,15 +11,16 @@ export class ChartComponent implements OnInit {
 
   constructor(private graphService: GraphService) { }
 
-  graphs: Graph[];
-  names: string[] = [];
-  sales: number[] = [];
+  graphs: Graph[]; // info JSON
+  names: string[] = []; // Names of commerce
+  sales: number[] = []; // Sales of commerce
 
   public barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true
   };
 
+  // Create a new chart with specific properties
   public chartColors: Array<any> = [
     { // first color
       backgroundColor: 'rgba(113,233,227,0.8)',
@@ -55,6 +56,7 @@ export class ChartComponent implements OnInit {
     });
   }
 
+  // add values to list of names and sales
   getList(array: Graph[]){
     for (let value of array){
       this.names.push(value.name);

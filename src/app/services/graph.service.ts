@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Graph } from '../models/graph';
 import { HttpClient } from '@angular/common/http';
-import { map } from "rxjs/operators";
+import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 @Injectable({

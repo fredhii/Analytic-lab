@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Commerce } from "../../models/commerce";
+import { Commerce } from '../../models/commerce';
 
 
 @Component({

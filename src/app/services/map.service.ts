@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Map } from '../models/map';
-import { Observable } from 'rxjs';
-import { map } from "rxjs/operators";
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -14,21 +12,11 @@ export class MapService {
 
   constructor(private http: HttpClient) { }
 
-  getCommerce(): Observable<Map[]>{
-    return this.http
-      .get(this.baseURL)
-      .pipe(
-        map((data: any[]) =>
-          data.map(
-            (item: any) =>
-              new Map(item.type, item.features)
-          )
-        )
-      );
+
+  // get values from API : JSON
+  getLayer() {
+    return this.http.get( this.baseURL )
+      .pipe(map((response: any) => response.features));
   }
 
-  segunda() {
-    return this.http.get( this.baseURL )
-                    .pipe(map((response: any) => response.features));
-  }
 }

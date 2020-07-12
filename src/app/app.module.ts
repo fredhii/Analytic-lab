@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TargetComComponent } from './components/target-com/target-com.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ChartComponent } from './components/chart/chart.component';
 import { ChartsModule } from 'ng2-charts';
 import { MapComponent } from './components/map/map.component';
@@ -15,7 +14,6 @@ import { MapComponent } from './components/map/map.component';
     AppComponent,
     TableComponent,
     TargetComComponent,
-    SidebarComponent,
     ChartComponent,
     MapComponent
   ],

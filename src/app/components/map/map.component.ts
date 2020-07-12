@@ -1,19 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 import { environment } from '../../../environments/environment.prod';
 import { MapService } from '../../services/map.service';
-import { Map } from '../../models/map';
+import { Commerce } from '../../models/commerce';
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements OnInit, OnChanges {
 
-  mapComm: mapboxgl;
-  mapJson: any;
-  coor: number;
+
+  @Input() focus: Commerce; // value set in app.component 
+
+  mapComm: mapboxgl; // map
+  mapJson: any; // JSON values
+  coor: number; // coordenates of focus value
   constructor(private mapService: MapService) { }
 
   ngOnInit(){
@@ -22,32 +25,52 @@ export class MapComponent implements OnInit {
     this.mapComm = new mapboxgl.Map({
     container: 'map-pos',
     style: 'mapbox://styles/mapbox/streets-v11',
-    center: [-74.036865234375, 4.737253893957665], // starting position
-    zoom: 10 // starting zoom
+    center: [-74.12544250488281,
+      4.538778849955251], // starting position*/
+    zoom: 12 // starting zoom
     });
 
-    this.mapService.segunda().subscribe(mapFromAPI =>{
-      this.mapJson = mapFromAPI.json();
+
+    // Get values from API, using map Service
+    this.mapService.getLayer().subscribe((mapFromAPI: any) =>{
+      this.mapJson = Object.keys(mapFromAPI).map(key => mapFromAPI[key]);
+      this.setMarkers();
+      console.log(`sdfsd ${this.focus.name}`);
     }, (err: any) => {
       console.log(err);
     });
 
-    const marke = new mapboxgl.Marker().setLngLat([-74.0980243, 4.7441814]).addTo(this.mapComm);
-    /*this.setMarkers();*/
-    /*this.setMarker(this.mapJson.features[0].geometry.oordinates[0], this.mapJson.features[0].geometry.oordinates[0]);*/
-    this.setMarker();
   }
 
-  setMarker(){
-      const marke = new mapboxgl.Marker().setLngLat([-74.08699035644531, 4.742043976363009]).addTo(this.mapComm);
+  // listening of setting value of focus variable
+  ngOnChanges() {
+    this.focusToCommerce(this.focus);
+  }
+  
+  // set a marker on the map
+  setMarker(cor: number[]){
+      const marke = new mapboxgl.Marker().setLngLat(cor).addTo(this.mapComm);
   }
 
-  /*setMarkers(){
-    for (let value of this.mapJson.features){
-      this.setMarker(value.geometry.coordinates[0], value.geometry.coordinates[1]);
-      this.coor = value.geometry.coordinates[0];
+  // set all markets on the map
+  setMarkers(){
+    for (let value of this.mapJson){
+      this.setMarker(value.geometry.coordinates);
     }
-  }*/
+  }
+
+  // Search value of coordenates in JSON depending of value in focus
+  private focusToCommerce(input: any){
+    for (let value of this.mapJson){
+      if (value.properties.name === this.focus.name){
+        const coor = value.geometry.coordinates;
+        this.mapComm.flyTo({center : coor, speed: 0.9, zoom: 16});
+        return;
+      }
+    }
+  }
+
+
 
 
 }

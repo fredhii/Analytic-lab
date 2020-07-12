@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommercesService } from '../../services/commerces.service';
 import { Output, EventEmitter } from '@angular/core';
-import { Commerce } from "../../models/commerce";
+import { Commerce } from '../../models/commerce';
 
 
 @Component({
@@ -18,6 +18,7 @@ export class TableComponent implements OnInit {
   constructor(private commerceService: CommercesService) {
    }
 
+  // get values from JSON
   ngOnInit(): void {
     this.commerceService.getCommerce().subscribe((commerFromAPI: Commerce[]) =>{
       this.commerces = commerFromAPI;
