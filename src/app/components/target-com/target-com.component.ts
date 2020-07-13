@@ -9,10 +9,12 @@ import { Commerce } from '../../models/commerce';
 })
 export class TargetComComponent implements OnInit {
 
-  @Input() commer: Commerce;
+  @Input() commer: Commerce 
+  
   constructor() { }
 
   ngOnInit(): void {
+      this.commer = new Commerce(123, "", "", "", "", "","", "", "");
   }
 
 }

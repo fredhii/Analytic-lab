@@ -15,7 +15,7 @@ export class MapComponent implements OnInit, OnChanges {
   @Input() focus: Commerce; // value set in app.component 
 
   mapComm: mapboxgl; // map
-  mapJson: any; // JSON values
+  mapJson: any[] = []; // JSON values
   coor: number; // coordenates of focus value
   constructor(private mapService: MapService) { }
 
@@ -32,10 +32,9 @@ export class MapComponent implements OnInit, OnChanges {
 
 
     // Get values from API, using map Service
-    this.mapService.getLayer().subscribe((mapFromAPI: any) =>{
+    this.mapService.getLayer().subscribe((mapFromAPI: any[]) =>{
       this.mapJson = Object.keys(mapFromAPI).map(key => mapFromAPI[key]);
       this.setMarkers();
-      console.log(`sdfsd ${this.focus.name}`);
     }, (err: any) => {
       console.log(err);
     });
