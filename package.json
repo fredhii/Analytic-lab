@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "node server.js",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --prod"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +21,7 @@
     "@angular/router": "~10.0.3",
     "bootstrap": "^4.5.0",
     "chart.js": "^2.9.3",
+    "express": "^4.17.1",
     "ionicons": "^5.1.2",
     "jquery": "^3.5.1",
     "mapbox-gl": "^1.11.1",
